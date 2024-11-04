@@ -2,11 +2,11 @@
   <div class="home">
     <div class="content-wrapper">
       <div class="navs">
-        <Nuxtlink>SERVICE</Nuxtlink>
-        <Nuxtlink>PACKS</Nuxtlink>
-        <img src="/icons/logo.svg" alt="Logo" class="src" id="logo">
-        <Nuxtlink>EVENTS</Nuxtlink>
-        <Nuxtlink>ABOUT</Nuxtlink>
+        <Nuxtlink to="/services">SERVICES</Nuxtlink>
+        <Nuxtlink to="/packs">PACKS</Nuxtlink>
+        <img src="/icons/logowhite.png" alt="Logo" class="logo">
+        <Nuxtlink to="/events">EVENTS</Nuxtlink>
+        <Nuxtlink to="/about">ABOUT</Nuxtlink>
       </div>
       <div class="box">
         <div class="box-content">
@@ -67,20 +67,25 @@ body {
   justify-content: space-between;
   width: 100%;
   color: #faf7f7;
-  gap: 3rem;
 }
 
 .navs Nuxtlink {
-  flex: 1;
-  text-align: center;
   color: #faf7f7;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 1.5rem;
+  transition: color 0.3s ease;
 }
 
-#logo {
-  flex: 0 0 auto;
-  width: 3rem;
-  height: 3rem;
+.navs Nuxtlink:hover {
+  color: #ff5500;
+}
+
+.logo {
+  width: 10rem;
+  height: 4rem;
+  object-fit: contain;
 }
 
 .box {
@@ -88,6 +93,9 @@ body {
   align-items: center;
   justify-content: center;
   background-image: url("/images/p.png");
+  object-fit: contain;
+  mix-blend-mode: difference;
+  pointer-events: none;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -115,20 +123,20 @@ body {
 
 .icon-row svg {
   font-size: 3rem;
-  color: hsl(0, 23%, 97%,0.8);
+  color: hsl(0, 23%, 97%, 0.8);
   transition: color 0.3s ease;
-  
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .navs Nuxtlink {
     font-size: 1.5rem;
+    padding: 0 0.8rem;
   }
 
-  #logo {
-    width: 2.5rem;
-    height: 2.5rem;
+  .logo {
+    width: 7rem;
+    height: 3rem;
   }
 
   .box {
