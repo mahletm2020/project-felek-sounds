@@ -8,11 +8,23 @@
         <Nuxtlink to="/events">EVENTS</Nuxtlink>
         <Nuxtlink to="/about">ABOUT</Nuxtlink>
       </div>
+
+      <!-- Left Sound Wave -->
+      <div class="sound-wave left">
+        <div></div><div></div><div></div><div></div><div></div>
+      </div>
+
       <div class="box">
         <div class="box-content">
           <!-- Add your content here -->
         </div>
       </div>
+
+      <!-- Right Sound Wave -->
+      <div class="sound-wave right">
+        <div></div><div></div><div></div><div></div><div></div>
+      </div>
+
       <div class="social-icons">
         <div class="icontitle">
           <p>join us</p>
@@ -33,6 +45,7 @@
 </template>
 
 <style scoped>
+/* Original styles */
 body {
   margin: 0;
   padding: 0;
@@ -125,6 +138,51 @@ body {
   font-size: 3rem;
   color: hsl(0, 23%, 97%, 0.8);
   transition: color 0.3s ease;
+}
+
+/* Sound Wave Styles */
+.sound-wave {
+  display: flex;
+  gap: 0.3rem;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sound-wave div {
+  width: 5px;
+  background-color: #faf7f7;
+  border-radius: 2px;
+  animation: pulse 0.7s infinite ease-in-out alternate;
+}
+
+/* Specific heights and delays for wave animation */
+.left div:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+.left div:nth-child(2) { height: 20px; animation-delay: 0.2s; }
+.left div:nth-child(3) { height: 15px; animation-delay: 0.3s; }
+.left div:nth-child(4) { height: 25px; animation-delay: 0.4s; }
+.left div:nth-child(5) { height: 20px; animation-delay: 0.5s; }
+
+.right div:nth-child(1) { height: 20px; animation-delay: 0.5s; }
+.right div:nth-child(2) { height: 25px; animation-delay: 0.4s; }
+.right div:nth-child(3) { height: 15px; animation-delay: 0.3s; }
+.right div:nth-child(4) { height: 20px; animation-delay: 0.2s; }
+.right div:nth-child(5) { height: 10px; animation-delay: 0.1s; }
+
+/* Pulse Animation */
+@keyframes pulse {
+  from { transform: scaleY(1); }
+  to { transform: scaleY(1.5); }
+}
+
+/* Positioning of Sound Waves */
+.left {
+  left: 10%;
+}
+
+.right {
+  right: 10%;
 }
 
 /* Responsive design */
