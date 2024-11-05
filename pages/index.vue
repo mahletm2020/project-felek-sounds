@@ -15,6 +15,7 @@
     <div class="co" v-show="!showVideo">
       <Home />
       <Service />
+      <Event />
     </div>
   </div>
 </template>
@@ -23,6 +24,7 @@
 import { ref } from 'vue';
 import Home from '../components/home.vue';
 import Service from '../components/service.vue';
+import Event from '../components/event.vue';
 
 const showVideo = ref(true); // Controls the video overlay visibility
 
