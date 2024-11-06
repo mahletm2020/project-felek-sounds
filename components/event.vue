@@ -55,10 +55,10 @@ const icons = ['youtube', 'twitter', 'instagram', 'tiktok', 'facebook', 'telegra
 
 <style scoped>
 .background {
-  background-image: url('/images/dude2.png');
+  /* background-image: url('/images/dude2.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -14,8 +14,12 @@
 
     <div class="co" v-show="!showVideo">
       <Home />
+      <div class="blur">
       <Service />
       <Event />
+      <Grids/>
+      <Last/>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +29,8 @@ import { ref } from 'vue';
 import Home from '../components/home.vue';
 import Service from '../components/service.vue';
 import Event from '../components/event.vue';
+import Grids from '../components/grids.vue';
+import Last from '../components/last.vue';
 
 const showVideo = ref(true); // Controls the video overlay visibility
 
@@ -40,7 +46,12 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
-
+.blur{
+  background-image: url('/images/dude2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat:repeat-y;
+}
 #videoOverlay {
   position: fixed;
   top: 0;

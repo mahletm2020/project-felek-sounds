@@ -9,20 +9,23 @@
         <Nuxtlink to="/about">ABOUT</Nuxtlink>
       </div>
 
-      <!-- Left Sound Wave -->
-      <div class="sound-wave left">
-        <div></div><div></div><div></div><div></div><div></div>
-      </div>
-
-      <div class="box">
-        <div class="box-content">
-          <!-- Add your content here -->
+      <!-- Sound Wave Container -->
+      <div class="sound-wave-container">
+        <!-- Left Sound Wave -->
+        <div class="sound-wave left">
+          <div></div><div></div><div></div><div></div><div></div>
         </div>
-      </div>
 
-      <!-- Right Sound Wave -->
-      <div class="sound-wave right">
-        <div></div><div></div><div></div><div></div><div></div>
+        <div class="box">
+          <div class="box-content">
+            <!-- Add your content here -->
+          </div>
+        </div>
+
+        <!-- Right Sound Wave -->
+        <div class="sound-wave right">
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
       </div>
 
       <div class="social-icons">
@@ -45,7 +48,6 @@
 </template>
 
 <style scoped>
-/* Original styles */
 body {
   margin: 0;
   padding: 0;
@@ -101,6 +103,66 @@ body {
   object-fit: contain;
 }
 
+.sound-wave-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sound-wave {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  pointer-events: none;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sound-wave div {
+  width: 8px; /* Increased width for more prominence */
+  background-color: #faf7f7;
+  border-radius: 2px;
+  animation: pulse 0.7s infinite ease-in-out alternate;
+  flex-grow: 1; /* Allows elements to scale based on available space */
+}
+
+.left div:nth-child(1),
+.right div:nth-child(1) {
+  height: 50px;
+}
+
+.left div:nth-child(2),
+.right div:nth-child(2) {
+  height: 80px;
+}
+
+.left div:nth-child(3),
+.right div:nth-child(3) {
+  height: 60px;
+}
+
+.left div:nth-child(4),
+.right div:nth-child(4) {
+  height: 90px;
+}
+
+.left div:nth-child(5),
+.right div:nth-child(5) {
+  height: 70px;
+}
+
+/* Optional: Add some variation in animation timing to make it feel more organic */
+.sound-wave div:nth-child(odd) {
+  animation-duration: 0.8s;
+}
+
+.sound-wave div:nth-child(even) {
+  animation-duration: 0.6s;
+}
+
+/*  */
+
 .box {
   display: flex;
   align-items: center;
@@ -140,49 +202,10 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Sound Wave Styles */
-.sound-wave {
-  display: flex;
-  gap: 0.3rem;
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sound-wave div {
-  width: 5px;
-  background-color: #faf7f7;
-  border-radius: 2px;
-  animation: pulse 0.7s infinite ease-in-out alternate;
-}
-
-/* Specific heights and delays for wave animation */
-.left div:nth-child(1) { height: 10px; animation-delay: 0.1s; }
-.left div:nth-child(2) { height: 20px; animation-delay: 0.2s; }
-.left div:nth-child(3) { height: 15px; animation-delay: 0.3s; }
-.left div:nth-child(4) { height: 25px; animation-delay: 0.4s; }
-.left div:nth-child(5) { height: 20px; animation-delay: 0.5s; }
-
-.right div:nth-child(1) { height: 20px; animation-delay: 0.5s; }
-.right div:nth-child(2) { height: 25px; animation-delay: 0.4s; }
-.right div:nth-child(3) { height: 15px; animation-delay: 0.3s; }
-.right div:nth-child(4) { height: 20px; animation-delay: 0.2s; }
-.right div:nth-child(5) { height: 10px; animation-delay: 0.1s; }
-
 /* Pulse Animation */
 @keyframes pulse {
   from { transform: scaleY(1); }
   to { transform: scaleY(1.5); }
-}
-
-/* Positioning of Sound Waves */
-.left {
-  left: 10%;
-}
-
-.right {
-  right: 10%;
 }
 
 /* Responsive design */
@@ -203,6 +226,11 @@ body {
 
   .icon-row svg {
     font-size: 1.2rem;
+  }
+
+  .sound-wave div {
+    width: 6px;
+    height: 20px;
   }
 }
 </style>
