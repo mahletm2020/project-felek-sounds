@@ -5,49 +5,70 @@
 
         <!-- Top Row Layout -->
         <div class="gridebig">
-          <img src="/images/s1.jpg" alt="Item 1" class="grid-image">
+          <div class="image-wrapper">
+            <img src="/images/s1.jpg" alt="Item 1" class="grid-image">
+          </div>
           <div class="arrow-overlay"></div>
         </div>
 
-        <!-- Middle Column: Two small items stacked in a column -->
+        <!-- Middle Column: Two small items in a column layout for desktop view -->
         <div class="middle-small-items-column">
-          <div class="grid-item-small" style="background-image: url('/images/s1.jpg');">
+          <div class="grid-item-small">
+            <div class="image-wrapper">
+              <img src="/images/s1.jpg" alt="Small Item 1" class="grid-image">
+            </div>
             <div class="label">KEFETA VOL. 1.<br />THE SERUM PRESETS</div>
-            <div class="arrow-overlay"></div>
+            <button class="justbtn"></button>
           </div>
-          <div class="grid-item-small" style="background-image: url('/images/s4.jpg');">
+          <div class="grid-item-small">
+            <div class="image-wrapper">
+              <img src="/images/s4.jpg" alt="Small Item 2" class="grid-image">
+            </div>
             <div class="label">KEFETA VOL. 1.<br />THE SERUM PRESETS</div>
-            <div class="arrow-overlay"></div>
+            <button class="justbtn"></button>
           </div>
         </div>
 
         <div class="gridebig">
-          <img src="/images/s3.jpg" alt="Item 3" class="grid-image">
+          <div class="image-wrapper">
+            <img src="/images/s3.jpg" alt="Item 3" class="grid-image">
+          </div>
           <div class="arrow-overlay"></div>
         </div>
 
-        <!-- Spacer Row for horizontal spacing between top and bottom rows -->
+        <!-- Spacer -->
         <div class="spacer-row"></div>
 
         <!-- Bottom Row Layout -->
         <div class="gridebig">
-          <img src="/images/s2.jpg" alt="Item 4" class="grid-image">
+          <div class="image-wrapper">
+            <img src="/images/s2.jpg" alt="Item 4" class="grid-image">
+          </div>
           <div class="arrow-overlay"></div>
         </div>
 
-        <!-- Middle Column: Two small items stacked in a column for VOL. 2 -->
+        <!-- Middle Column: Two small items in a column layout for VOL. 2 -->
         <div class="middle-small-items-column">
-          <div class="grid-item-small" style="background-image: url('/images/s4.jpg');">
+          <div class="grid-item-small">
+            <div class="image-wrapper">
+              <img src="/images/s4.jpg" alt="Small Item 3" class="grid-image">
+            </div>
             <div class="label">KEFETA VOL. 2.<br />THE SERUM PRESETS</div>
-            <div class="arrow-overlay"></div>
+            <button class="justbtn"></button>
           </div>
-          <div class="grid-item-small no-border" style="background-image: url('/images/s5.jpg');">
-            <div class="label">KEFETA VOL. 2.<br />THE SERUM PRESETS</div>
+          <div class="grid-item-small no-border">
+            <div class="image-wrapper">
+              <img src="/images/s5.jpg" alt="Small Item 4" class="grid-image">
+            </div>
           </div>
         </div>
 
-        <div class="gridebig blurred no-border">
-          <div class="arrow-overlay"></div>
+        <!-- Last Grid Item -->
+        <div class="gridebig last-item">
+          <div class="image-wrapper">
+            <img src="/images/s1.jpg" alt="Item 5" class="grid-image blurred-image">
+          </div>
+          <div class="arrow-overlay center-arrow"></div>
         </div>
 
       </div>
@@ -58,112 +79,85 @@
 <style scoped>
 /* Full-page background */
 .full-page-background {
-  /* background-image: url('/images/dude2.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-  height: 400vh;
+  height: 300vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  margin-top: -25rem;
 }
 
-/* Main container for the grid */
+/* Main container */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
   padding: 20px;
-  margin-top: -12px;
 }
 
-/* Grid container styling */
+/* Grid container */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
-  grid-auto-rows: auto;  /* Rows auto-adjust to content */
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   width: 90vw;
   max-width: 1200px;
-  padding: 20px;
 }
 
-/* Spacer row to add vertical space between rows */
-.spacer-row {
-  grid-column: 1 / span 3;
-  height: 20px;
-}
-
-/* Base grid item styling */
-.grid-item {
-  position: relative;
+/* Image wrapper */
+.image-wrapper {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
-/* Large grid item styling */
-.gridebig {
-  grid-column: span 1;  /* Occupies one column */
-  grid-row: span 2;     /* Spans two rows to match the height of two small items */
-  height: 640px;        /* Adjust height to match two small items (150px each) */
-  width: 500px;
-  border-right: 4px solid orange;  /* Right border in orange */
-  border-bottom: 4px solid orange; /* Bottom border in orange */
-  border-bottom-right-radius: 10px; /* Slight curve on the bottom-right corner */
-}
-
-/* Small grid item styling with background image support */
-.grid-item-small {
-  border: 2px solid #c0d4a3;  /* Border color of the small grid */
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;  /* Height of each small item */
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.grid-item:hover {
-  transform: scale(1.05);
-}
-
-/* Special styling for items without borders */
-.no-border {
-  border: none;
-}
-
-/* Blurred item */
-.blurred {
-  background-color: #333;
-  filter: blur(0.9px);
-}
-
-/* Image styling */
 .grid-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Label styling for text items */
-.label {
-  color: black;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  background-color: #c0d4a3;
-  border-radius: 5px;
+/* Large grid item */
+.gridebig {
+  grid-column: span 1;
+  grid-row: span 2;
+  height: 640px;
+  border-right: 6px solid rgb(255, 98, 0);
+  border-bottom: 6px solid rgb(255, 102, 0);
+}
+
+/* Column layout for small items */
+.middle-small-items-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Small grid item */
+.grid-item-small {
+  height: 280px;
+  border: 6px solid rgb(255, 89, 0);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Just button styling */
+.justbtn {
+  width: 120px;
+  height: 35px;
+  background-color: #ff5500;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* Blurred image */
+.blurred-image {
+  filter: blur(5px);
 }
 
 /* Arrow overlay */
@@ -173,52 +167,56 @@
   right: 10px;
   width: 30px;
   height: 30px;
-  background-color: orange;
+  background-color: rgb(255, 89, 0);
   mask: url('/icons/downarrow.svg') center / contain no-repeat;
-  -webkit-mask: url('/icons/downarrow.svg') center / contain no-repeat;
-  transition: transform 0.3s ease;
 }
 
-.grid-item:hover .arrow-overlay {
-  transform: translate(5px, -5px);
-}
-.middle-small-items-column{
-  gap: 10px;
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
+/* Responsive design */
+@media (max-width: 1024px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Single column layout on small screens */
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
   }
 
-  /* Stack large grids first, followed by small grids in a row */
   .gridebig {
-    width: 100%;
-    height: 300px;
+    height: 400px;
   }
 
-  /* Center the small items in a row */
   .middle-small-items-column {
-    display: flex;
+    flex-direction: row;
     gap: 10px;
   }
 
   .grid-item-small {
-    width: 45%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gridebig {
+    height: 300px;
+  }
+
+  .grid-item-small {
+    width: 100%;
+    height: 180px;
   }
 }
 
 @media (max-width: 480px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Stack all items in a single column on very small screens */
+    grid-template-columns: 1fr;
   }
 
-  /* Full width for small items */
+  .gridebig {
+    height: 250px;
+  }
+
   .grid-item-small {
-    width: 100%;
+    height: 150px;
   }
 }
-
 </style>

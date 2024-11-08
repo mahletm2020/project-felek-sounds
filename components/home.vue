@@ -75,7 +75,7 @@ body {
   gap: 2rem;
   padding: 1rem;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1300px;
   min-height: 100vh;
 }
 
@@ -84,21 +84,23 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 12rem;
   color: #faf7f7;
   font-family: 'lemon-milk', sans-serif;
-  font-size: 2rem;
-  gap: 2rem;
-  padding: 1rem 0;
+  /* font-size: 1rem; */
+  gap: 2.5rem;
+  /* padding: 1rem 0; */
 }
 
 .nav-link {
   color: #faf7f7;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
   transition: color 0.3s ease;
   flex-shrink: 0;
-  margin: 0 1.5rem;
+  /* margin: 0 0.2rem; */
+  margin-top: -5rem;
 }
 
 .nav-link:hover {
@@ -106,9 +108,9 @@ body {
 }
 
 .logo {
-  width: 15rem;
+  /* width: 15rem; */
   height: auto;
-  max-height: 6rem;
+  max-height: 20rem;
   object-fit: contain;
   z-index: 1;
 }
@@ -180,12 +182,12 @@ body {
 .icon-row {
   display: flex;
   gap: 1.5rem;
-  
+
 
 }
 
 .icon-row svg {
-  font-size: 3.5rem;
+  font-size: 1.9rem;
   color: hsl(0, 23%, 97%, 0.8);
   transition: color 0.3s ease;
 }
@@ -199,7 +201,7 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .nav-link {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0 0.8rem;
   }
 

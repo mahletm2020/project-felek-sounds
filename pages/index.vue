@@ -45,12 +45,16 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  
 }
 .blur{
   background-image: url('/images/dude2.png');
   background-size: cover;
-  background-position: center;
-  background-repeat:repeat-y;
+  background-position: center  -20rem;
+  background-repeat:no-repeat;
+  min-height: 600vh;
+  /* max-height: 1200rem; */
+  
 }
 #videoOverlay {
   position: fixed;
@@ -72,6 +76,7 @@ body {
 }
 
 .co {
+  background-image: url('/images/dude.svg');
   overflow-x: hidden;
   
 }
