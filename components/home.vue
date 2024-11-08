@@ -1,33 +1,36 @@
 <template>
   <div class="home">
     <div class="content-wrapper">
+      <!-- Navigation Bar -->
       <div class="navs">
-        <Nuxtlink to="/services">SERVICES</Nuxtlink>
-        <Nuxtlink to="/packs">PACKS</Nuxtlink>
-        <img src="/icons/logowhite.png" alt="Logo" class="logo">
-        <Nuxtlink to="/events">EVENTS</Nuxtlink>
-        <Nuxtlink to="/about">ABOUT</Nuxtlink>
+        <Nuxtlink to="/services" class="nav-link">SERVICES</Nuxtlink>
+        <Nuxtlink to="/packs" class="nav-link">PACKS</Nuxtlink>
+        <img src="/icons/logowhite.png" alt="Logo" class="logo" />
+        <Nuxtlink to="/events" class="nav-link">EVENTS</Nuxtlink>
+        <Nuxtlink to="/about" class="nav-link">ABOUT</Nuxtlink>
       </div>
 
       <!-- Sound Wave Container -->
       <div class="sound-wave-container">
         <!-- Left Sound Wave -->
         <div class="sound-wave left">
-          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div>
 
+        <!-- Image Box -->
         <div class="box">
           <div class="box-content">
-            <!-- Add your content here -->
+            <!-- Content goes here -->
           </div>
         </div>
 
         <!-- Right Sound Wave -->
         <div class="sound-wave right">
-          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         </div>
       </div>
 
+      <!-- Social Icons -->
       <div class="social-icons">
         <div class="icontitle">
           <p>join us</p>
@@ -82,25 +85,32 @@ body {
   justify-content: space-between;
   width: 100%;
   color: #faf7f7;
+  font-family: 'lemon-milk', sans-serif;
+  font-size: 2rem;
+  gap: 2rem;
+  padding: 1rem 0;
 }
 
-.navs Nuxtlink {
+.nav-link {
   color: #faf7f7;
   font-size: 1.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0 1.5rem;
   transition: color 0.3s ease;
+  flex-shrink: 0;
+  margin: 0 1.5rem;
 }
 
-.navs Nuxtlink:hover {
+.nav-link:hover {
   color: #ff5500;
 }
 
 .logo {
-  width: 10rem;
-  height: 4rem;
+  width: 15rem;
+  height: auto;
+  max-height: 6rem;
   object-fit: contain;
+  z-index: 1;
 }
 
 .sound-wave-container {
@@ -112,63 +122,38 @@ body {
 
 .sound-wave {
   display: flex;
-  gap: 0.5rem;
   flex: 1;
+  gap: 0.6rem;
   pointer-events: none;
-  align-items: center;
   justify-content: space-around;
 }
 
 .sound-wave div {
-  width: 8px; /* Increased width for more prominence */
+  width: 10px;
   background-color: #faf7f7;
-  border-radius: 2px;
-  animation: pulse 0.7s infinite ease-in-out alternate;
-  flex-grow: 1; /* Allows elements to scale based on available space */
+  border-radius: 20px;
+  animation: pulse 0.8s infinite ease-in-out alternate;
+  flex-grow: 1;
 }
 
-.left div:nth-child(1),
-.right div:nth-child(1) {
-  height: 50px;
-}
+/* Dynamic wave heights */
+.left div:nth-child(1), .right div:nth-child(1) { height: 20px; }
+.left div:nth-child(2), .right div:nth-child(2) { height: 70px; }
+.left div:nth-child(3), .right div:nth-child(3) { height: 90px; }
+.left div:nth-child(4), .right div:nth-child(4) { height: 60px; }
+.left div:nth-child(5), .right div:nth-child(5) { height: 90px; }
+.left div:nth-child(6), .right div:nth-child(6) { height: 70px; }
+.left div:nth-child(7), .right div:nth-child(7) { height: 70px; }
+.left div:nth-child(8), .right div:nth-child(8) { height: 30px; }
 
-.left div:nth-child(2),
-.right div:nth-child(2) {
-  height: 80px;
-}
-
-.left div:nth-child(3),
-.right div:nth-child(3) {
-  height: 60px;
-}
-
-.left div:nth-child(4),
-.right div:nth-child(4) {
-  height: 90px;
-}
-
-.left div:nth-child(5),
-.right div:nth-child(5) {
-  height: 70px;
-}
-
-/* Optional: Add some variation in animation timing to make it feel more organic */
-.sound-wave div:nth-child(odd) {
-  animation-duration: 0.8s;
-}
-
-.sound-wave div:nth-child(even) {
-  animation-duration: 0.6s;
-}
-
-/*  */
+.sound-wave div:nth-child(odd) { animation-duration: 0.6s; }
+.sound-wave div:nth-child(even) { animation-duration: 1s; }
 
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: url("/images/p.png");
-  object-fit: contain;
   mix-blend-mode: difference;
   pointer-events: none;
   background-size: cover;
@@ -184,20 +169,23 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
+  font-family: 'lemon-milk', sans-serif;
 }
 
 .icontitle p {
-  font-size: 4rem;
+  font-size: 2rem;
   color: #faf7f7;
 }
 
 .icon-row {
   display: flex;
   gap: 1.5rem;
+  
+
 }
 
 .icon-row svg {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: hsl(0, 23%, 97%, 0.8);
   transition: color 0.3s ease;
 }
@@ -205,32 +193,28 @@ body {
 /* Pulse Animation */
 @keyframes pulse {
   from { transform: scaleY(1); }
-  to { transform: scaleY(1.5); }
+  to { transform: scaleY(1.6); }
 }
 
-/* Responsive design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .navs Nuxtlink {
+  .nav-link {
     font-size: 1.5rem;
-    padding: 0 0.8rem;
+    margin: 0 0.8rem;
   }
 
   .logo {
-    width: 7rem;
-    height: 3rem;
-  }
-
-  .box {
-    height: 50vh;
-  }
-
-  .icon-row svg {
-    font-size: 1.2rem;
+    width: 10rem;
+    max-height: 5rem;
   }
 
   .sound-wave div {
     width: 6px;
-    height: 20px;
+    height: 30px;
+  }
+
+  .icon-row svg {
+    font-size: 2.5rem;
   }
 }
 </style>
