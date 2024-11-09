@@ -19,6 +19,7 @@
       <Event />
       <Grids/>
       <Last/>
+      <Footer/>
       </div>
     </div>
   </div>
@@ -31,6 +32,7 @@ import Service from '../components/service.vue';
 import Event from '../components/event.vue';
 import Grids from '../components/grids.vue';
 import Last from '../components/last.vue';
+import Footer from '~/components/footer.vue';
 
 const showVideo = ref(true); // Controls the video overlay visibility
 
@@ -51,8 +53,8 @@ body {
   background-image: url('/images/dude2.png');
   background-size: cover;
   background-position: center  -20rem;
-  background-repeat:no-repeat;
-  min-height: 600vh;
+  background-repeat:repeat;
+  min-height: auto;
   /* max-height: 1200rem; */
   
 }

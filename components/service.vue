@@ -12,7 +12,8 @@
 
           <div class="ztxt">
               <p class="section-description">
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                   Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio mollitia dolore laboriosam debitis voluptatem consequatur provident repudiandae et, magni quasi aperiam dolores! Expedita ullam similique quod sapiente dolore accusamus? Hic?
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Quis ipsum suspendisse ultrices gravida.
               </p>
           </div>
@@ -148,6 +149,8 @@ body {
   font-weight: 900;
   margin-bottom: 2.4rem;
   color: #e0e0e0;
+  font-family: 'lemon-milk', sans-serif;
+
 }
 
 .section-title {
@@ -157,6 +160,8 @@ body {
   text-align: left;
   white-space: nowrap; /* Prevent the title from wrapping */
   max-width: unset; 
+  font-family: 'lemon-milk', sans-serif;
+
 }
 
 .section-description {
@@ -164,6 +169,8 @@ body {
   color: #ddd;
   text-align: left;
   margin-bottom: 2rem;
+  font-family: 'lemon-milk', sans-serif;
+
   /* margin-right: 50rem; */
 }
 
